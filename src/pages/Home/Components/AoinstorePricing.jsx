@@ -1,5 +1,6 @@
 import React from 'react';
 import { ShoppingBag, DollarSign, CreditCard, Shield, TrendingUp, CheckCircle, XCircle, Truck, RotateCcw, Clock, Wallet, Package, IndianRupee } from 'lucide-react';
+import Footer from '../../../component/Footer';
 
 export default function AoinstorePricing() {
   return (
@@ -335,55 +336,18 @@ export default function AoinstorePricing() {
           <p className="text-xl text-orange-100 mb-8">
             Join the fastest growing e-commerce platform and grow your business online—enjoy 0% commission and reach crores of buyers instantly.
           </p>
+          <a href="https://aoinstore.com/register-business">
           <button className="px-8 py-4 bg-white text-orange-600 text-lg font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg">
             Register Now - It's Free
           </button>
+          </a>
           <p className="mt-6 text-orange-100">
-            Have questions? Contact us at <a href="mailto:sell@aoinstore.com" className="underline font-semibold">sell@aoinstore.com</a>
+            Have questions? Contact us at <a href="mailto:infoaoinstore@gmail.com" className="underline font-semibold">infoaoinstore@gmail.com</a>
           </p>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <ShoppingBag className="w-6 h-6 text-orange-600" />
-                <span className="text-xl font-bold text-white">Aoinstore</span>
-              </div>
-              <p className="text-sm">
-                Empowering sellers to reach millions of customers across India at 0% commission.
-              </p>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Sell on Aoinstore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Sell Online</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Fees & Commission</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shipping & Network</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Seller Panel</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Order Business</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Contact Us</h4>
-              <p className="text-sm">Email: sell@aoinstore.com</p>
-              <p className="text-sm mt-2">Support Available 24/7</p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm">
-            <p>&copy; 2025 Aoinstore. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

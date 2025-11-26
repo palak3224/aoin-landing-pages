@@ -1,7 +1,36 @@
-import React from 'react';
-import { ShoppingBag, Users, TrendingUp, Package, CheckCircle, Upload, Truck, DollarSign, MapPin, Target, BarChart3, Award, Star } from 'lucide-react';
+import React, { useState } from 'react';
+import { ShoppingBag, Users, TrendingUp, Package, CheckCircle, Upload, Truck, DollarSign, MapPin, Target, BarChart3, Award, Star, X } from 'lucide-react';
+import Footer from '../../../component/Footer';
 
 export default function AoinSellerPage() {
+
+  const [selectedVideo, setSelectedVideo] = useState(null);
+
+    const videos = [
+    {
+      id: 1,
+      icon: Target,
+      title: "How to Register on Aoinstore?",
+      description: "Join Aoinstore to sell all of India online. Become a supplier with just a mobile number, active bank account and GSTIN to start online selling today.",
+      videoUrl: "https://res.cloudinary.com/ddnb10zkq/video/upload/v1764162695/Aoin_video_bgrafb.mp4"
+    },
+    {
+      id: 2,
+      icon: Package,
+      title: "Uploading Documents and Get Verification",
+      description: "Learn how to upload your documents and complete the verification process to start selling on Aoinstore platform.",
+      videoUrl: "https://res.cloudinary.com/ddnb10zkq/video/upload/v1764162688/2nd_part_f9uoco.mp4"
+    },
+    {
+      id: 3,
+      icon: BarChart3,
+      title: "Listing Products on Aoinstore",
+      description: "Understand listing on Aoinstore supplier panel with this end-to-end video guide. Upload your product catalog and sell online to lakhs of orders a day.",
+      videoUrl: "https://res.cloudinary.com/ddnb10zkq/video/upload/v1764162631/WhatsApp_Video_2025-11-26_at_18.39.04_qjb2s9.mp4"
+    }
+  ];
+
+
   return (
     <div className="min-h-screen bg-white">
 
@@ -14,19 +43,21 @@ export default function AoinSellerPage() {
               <h1 className="text-5xl font-bold text-gray-900 mb-4">
                 Become an AOIN seller to start <span className="text-orange-600">selling your products online</span> at 0% commission
               </h1>
-              <div className="bg-orange-600 text-white inline-block px-4 py-2 rounded-lg text-sm font-semibold mb-6">
+              {/* <div className="bg-orange-600 text-white inline-block px-4 py-2 rounded-lg text-sm font-semibold mb-6">
                 NEW BENEFITS
-              </div>
+              </div> */}
               <p className="text-gray-700 mb-8">
                 Don't have a GSTIN or have a Composition GSTIN? You can still sell on AOIN.
               </p>
+              <a href="https://aoinstore.com/register-business">
               <button className="px-8 py-4 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors font-semibold text-lg">
                 Start Selling Now
               </button>
+              </a>
             </div>
             <div className="flex justify-center">
               <img 
-                src="https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?w=600&h=400&fit=crop" 
+                src="https://res.cloudinary.com/ddnb10zkq/image/upload/v1764158271/1_kluob4.jpg" 
                 alt="Seller with packages" 
                 className="w-full max-w-lg rounded-2xl shadow-lg object-cover"
               />
@@ -71,7 +102,7 @@ export default function AoinSellerPage() {
       </section>
 
       {/* Supplier Testimonials */}
-      <section className="py-16 bg-gray-50">
+      {/* <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">
             Why Suppliers Sell on Aoinstore?
@@ -134,156 +165,187 @@ export default function AoinSellerPage() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* How to Sell Online */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
-            How to Sell Your Products Online?
-          </h2>
-          
-          <div className="space-y-16">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
-                    1
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Register as an AOIN Seller</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Create an account on AOIN and list the products you want to sell online. All you need for AOIN seller registration is an active bank account and your GSTIN number (for GST sellers) or Enrolment ID / UIN (for non-GST sellers).
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-full h-64 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
-                  <CheckCircle className="w-24 h-24 text-orange-600" />
-                </div>
-              </div>
-            </div>
+<section className="py-16 bg-white">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 flex justify-center">
-                <div className="w-full h-64 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
-                  <Upload className="w-24 h-24 text-orange-600" />
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
-                    2
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Upload Catalog and Receive Orders</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Once registered, upload your product catalog on the AOIN Supplier Panel and start selling. Catalogs go live in 72 hours. Upload high quality images and detailed descriptions to attract customers.
-                </p>
-              </div>
-            </div>
+    <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
+      How to Sell Your Products Online?
+    </h2>
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
-                    3
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Shipping & Order Delivery</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  AOIN offers easy, affordable, reliable delivery. Our logistics partners pick up products from your location and deliver them to customers nationwide. Track all shipments in real-time.
-                </p>
-              </div>
-              <div className="flex justify-center">
-                <div className="w-full h-64 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
-                  <Truck className="w-24 h-24 text-orange-600" />
-                </div>
-              </div>
-            </div>
+    <div className="space-y-20">
 
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="order-2 md:order-1 flex justify-center">
-                <div className="w-full h-64 bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl flex items-center justify-center">
-                  <DollarSign className="w-24 h-24 text-orange-600" />
-                </div>
-              </div>
-              <div className="order-1 md:order-2">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
-                    4
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900">Receive Payment in Your Bank Account</h3>
-                </div>
-                <p className="text-gray-600 leading-relaxed">
-                  Payment deposited directly in your bank account with a 7-day payment cycle from order delivery. Cash on Delivery orders included. Safe and secure payments guaranteed.
-                </p>
-              </div>
+      {/* STEP 1 */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
+              1
             </div>
+            <h3 className="text-2xl font-bold text-gray-900">Register as an AOIN Seller</h3>
+          </div>
+          <p className="text-gray-600 leading-relaxed">
+            Create an account on AOIN and list the products you want to sell online. All you need for AOIN seller registration is an active bank account and your GSTIN number (for GST sellers) or Enrolment ID / UIN (for non-GST sellers).
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <div className="w-full max-w-md h-96 aspect-square bg-white rounded-xl shadow-md flex items-center justify-center p-4">
+            <img
+              src="https://res.cloudinary.com/ddnb10zkq/image/upload/v1764158487/sign_up_wsyyub.png"
+              alt="Register as seller"
+              className="w-full h-full object-fit"
+            />
           </div>
         </div>
-      </section>
+      </div>
+
+      {/* STEP 2 */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="order-2 md:order-1 flex justify-center">
+          <div className="w-full max-w-md h-96 aspect-square bg-white rounded-xl shadow-md flex items-center justify-center p-4">
+            <img
+              src="https://res.cloudinary.com/ddnb10zkq/image/upload/v1764158808/List_Products_zubdoy.png"
+              alt="Upload catalog"
+              className="w-full h-full object-fit"
+            />
+          </div>
+        </div>
+
+        <div className="order-1 md:order-2">
+          <div className="flex items-center mb-4">
+            <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
+              2
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">Upload Catalog and Receive Orders</h3>
+          </div>
+          <p className="text-gray-600 leading-relaxed">
+            Once registered, upload your product catalog on the AOIN Supplier Panel and start selling. Catalogs go live in 72 hours. Upload high quality images and detailed descriptions to attract customers.
+          </p>
+        </div>
+      </div>
+
+      {/* STEP 3 */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <div className="flex items-center mb-4">
+            <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
+              3
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">Shipping & Order Delivery</h3>
+          </div>
+          <p className="text-gray-600 leading-relaxed">
+            AOIN offers easy, affordable, reliable delivery. Our logistics partners pick up products from your location and deliver them to customers nationwide. Track all shipments in real-time.
+          </p>
+        </div>
+
+        <div className="flex justify-center">
+          <div className="w-full max-w-md h-96 aspect-square rounded-xl shadow-md flex items-center justify-center p-4">
+            <img
+              src="https://res.cloudinary.com/ddnb10zkq/image/upload/v1764159986/Receive_Ship_Orders_qnyt08.png"
+              alt="Shipping delivery"
+              className="w-full h-full object-fit"
+            />
+          </div>
+        </div>
+      </div>
+
+      {/* STEP 4 */}
+      <div className="grid md:grid-cols-2 gap-12 items-center">
+        <div className="order-2 md:order-1 flex justify-center">
+          <div className="w-full max-w-md h-96 aspect-square rounded-xl shadow-md flex items-center justify-center p-4">
+            <img
+              src="https://res.cloudinary.com/ddnb10zkq/image/upload/v1764161055/Receive_Payments_ccnug5.png"
+              alt="Receive payment"
+              className="w-full h-full object-fit"
+            />
+          </div>
+        </div>
+
+        <div className="order-1 md:order-2">
+          <div className="flex items-center mb-4">
+            <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-xl font-bold mr-4">
+              4
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900">Receive Payment in Your Bank Account</h3>
+          </div>
+          <p className="text-gray-600 leading-relaxed">
+            Payment is deposited directly into your bank account with a 7-day payment cycle from the order delivery date. COD orders included. Safe and secure payments guaranteed.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
       {/* Learn How to Sell */}
-      <section className="py-16 bg-gray-50">
+<section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-12">
             Learn How to Sell Your Products on Aoinstore
           </h2>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-50">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Target className="w-20 h-20 text-orange-600" />
+            {videos.map((video) => {
+              return (
+                <div key={video.id} className="bg-white rounded-lg overflow-hidden shadow-sm">
+                  <div className="relative h-48 bg-black group cursor-pointer" onClick={() => setSelectedVideo(video)}>
+                    <video
+                      src={video.videoUrl}
+                      className="w-full h-full object-cover"
+                      muted
+                    />
+                    <div className="absolute inset-0 bg-black bg-opacity-30 group-hover:bg-opacity-40 transition-all"></div>
+                    <button
+                      onClick={() => setSelectedVideo(video)}
+                      className="absolute inset-0 flex items-center justify-center"
+                    >
+                      <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center hover:bg-orange-700 transition-colors shadow-lg">
+                        <span className="text-white font-bold text-2xl ml-1">▶</span>
+                      </div>
+                    </button>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="font-bold text-gray-900 mb-3">{video.title}</h3>
+                    <p className="text-sm text-gray-600">{video.description}</p>
+                  </div>
                 </div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">▶</span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-gray-900 mb-3">How to Register on Aoinstore?</h3>
-                <p className="text-sm text-gray-600">
-                  Join Aoinstore to sell all of India online. Become a supplier with just a mobile number, active bank account and GSTIN to start online selling today.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-50">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <Package className="w-20 h-20 text-orange-600" />
-                </div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">▶</span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-gray-900 mb-3">How to List on Supplier Panel</h3>
-                <p className="text-sm text-gray-600">
-                  Understand listing on Aoinstore supplier panel with this end-to-end video guide. Upload your product catalog and sell online to lakhs of orders a day.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-lg overflow-hidden shadow-sm">
-              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-50">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <BarChart3 className="w-20 h-20 text-orange-600" />
-                </div>
-                <div className="absolute bottom-4 left-4 w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold">▶</span>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="font-bold text-gray-900 mb-3">How to grow your online business</h3>
-                <p className="text-sm text-gray-600">
-                  Gain insights on how to expand your customer base and boost your product's reach to get more orders and grow your business.
-                </p>
-              </div>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="relative w-full max-w-4xl bg-black rounded-lg overflow-hidden">
+            <button
+              onClick={() => setSelectedVideo(null)}
+              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white bg-opacity-20 hover:bg-opacity-30 rounded-full flex items-center justify-center transition-colors"
+            >
+              <X className="w-6 h-6 text-white" />
+            </button>
+            
+            <div className="p-4">
+              <h3 className="text-white text-xl font-bold mb-4">{selectedVideo.title}</h3>
+              <video
+                src={selectedVideo.videoUrl}
+                controls
+                autoPlay
+                className="w-full rounded"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Grow Your Business */}
       <section className="py-16 bg-white">
@@ -392,62 +454,15 @@ export default function AoinSellerPage() {
           <p className="text-gray-600 mb-8">
             Aoinstore supplier support is available to solve all your doubts and issues before and after you start your online selling business.
           </p>
+          <a href="https://aoinstore.com/register-business">
           <button className="px-8 py-3 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors font-semibold">
-            Contact us at <span className="underline">sell@aoinstore.com</span>
+            Contact us at <span className="underline">infoaoinstore@gmail.com</span>
           </button>
+          </a>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-gray-400 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <ShoppingBag className="w-6 h-6 text-orange-600" />
-                <span className="text-xl font-bold text-white">Aoinstore</span>
-              </div>
-              <p className="text-sm">
-                Sell your products to crores of customers at 0% commission.
-              </p>
-              <button className="mt-4 px-5 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors font-medium text-sm">
-                Start Selling
-              </button>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Sell on Aoinstore</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Sell Online</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Fees & Commission</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing & Commission</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">How it Works</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Shipping & Returns</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Resources</h4>
-              <ul className="space-y-2 text-sm">
-                <li><a href="#" className="hover:text-white transition-colors">Seller Panel</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Order Business</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">FAQs</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Grow Your Business</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-white font-semibold mb-4">Contact Us</h4>
-              <p className="text-sm mb-4">
-                Email: sell@aoinstore.com
-              </p>
-              <p className="text-sm">
-                Support Available 24/7
-              </p>
-            </div>
-          </div>
-          <div className="border-t border-gray-800 pt-8 text-center text-sm">
-            <p>&copy; 2025 Aoinstore. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

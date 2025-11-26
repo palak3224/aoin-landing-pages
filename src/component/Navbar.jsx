@@ -84,14 +84,18 @@ const Navbar = () => {
                 </NavLink>
               </nav>
               
-              <div className="flex flex-col space-y-3 mt-6">
-                <button className="w-full px-4 py-2 text-orange-600 border border-orange-600 rounded hover:bg-orange-50 transition-colors">
-                  Login
-                </button>
-                <button className="w-full px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors">
-                  Start Selling
-                </button>
-              </div>
+              <div className="flex items-center space-x-4">
+            <a href="https://aoinstore.com/register-business">
+            <button className="px-4 py-2 text-orange-600 border border-orange-600 rounded hover:bg-orange-50 transition-colors">
+              Login
+            </button>
+            </a>
+            <a href="https://aoinstore.com/register-business">
+            <button className="px-4 py-2 bg-orange-600 text-white rounded hover:bg-orange-700 transition-colors">
+              Start Selling
+            </button>
+            </a>
+          </div>
             </div>
           )}
         </div>
